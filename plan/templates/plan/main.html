@@ -1,0 +1,22 @@
+{% load static %}
+{% load mathfilters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/style.css' %}?{% now "U" %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}{{ title_text }}{% endblock %}
+    </title>
+</head>
+<body>
+    <div class="navbar">
+        {% include 'plan/navbar.html' %}
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,342 @@
+{% extends "plan/main.html" %}
+{% load mathfilters %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="board">
+        <div class="container">
+            <span class="text_on_dark2">{{ plan.name }} :</span>
+            <a class="new a fas fa-plus" title="Create new class" href="{% url 'create_class' plan.id %}"></a>
+            <a class="text_on_dark3 fas fa-arrow-left powrot" title="Powrot" href="{% url 'home' %}"></a>
+            <a class="far fa-file clear" title="Clear View" href="{% url 'viewPDF' plan.id %}" target="_blank"></a>
+        </div>
+        <div class="plan">
+            <div id="dni">
+                <div style="width: 176px" >{{ plan.name }}</div>
+                <div>MONDAY</div>
+                <div>TUESDAY</div>
+                <div>WEDNESDAY</div>
+                <div>THURSDAY</div>
+                <div>FRIDAY</div>
+                <div>SATURDAY</div>
+                <div>SUNDAY</div>
+            </div>
+            <div id="godziny">
+                <div class="godzina">8:00</div>
+                <div class="godzina">9:00</div>
+                <div class="godzina">10:00</div>
+                <div class="godzina">11:00</div>
+                <div class="godzina">12:00</div>
+                <div class="godzina">13:00</div>
+                <div class="godzina">14:00</div>
+                <div class="godzina">15:00</div>
+                <div class="godzina">16:00</div>
+                <div class="godzina">17:00</div>
+                <div class="godzina">18:00</div>
+                <div class="godzina">19:00</div>
+                <div class="godzina">20:00</div>
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 0 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 1 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 2 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 3 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 4 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 5 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px;left: 2px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="day">
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                <div class="sep"></div>
+                {% for i in lekcje %}
+                    {% if i.dzien == 6 %}
+                        {% with x=i.godzinazakonczeniaa|sub:i.godzinarozpoczecia y=10.5|mul:i.godzinarozpoczecia %}
+                            <div class="rodzaj{{ i.rodzaj }}" style="height: {{ x|mul:10.5 }}px;top:{{ 0|add:y }}px">
+                                <div class="dane">
+                                    <a class="fas a fa-pen editlekcja" title="Update class" href="{% url 'update_class' i.id %}"></a>
+                                    <a class="fas a fa-times usunlekcja" title="Delete class" href="{% url 'delete_class' i.id %}"></a>
+                                    <p>{{ i.name }}</p>
+                                    <p>{{ i.prowadzacy }}</p>
+                                    <p>{{ i.sala }}</p>
+                                    {% with a=i.godzinarozpoczecia b=i.godzinazakonczeniaa %}
+                                        <p>
+                                        {% for godzina in godziny %}
+                                            {% if forloop.counter0 == a %}
+                                                {{ godzina }} -
+                                            {% endif %}
+                                            {% if forloop.counter0 == b %}
+                                                {{ godzina }}
+                                            {% endif %}
+                                        {% endfor %}
+                                        </p>
+                                    {% endwith %}
+                                </div>
+                            </div>
+                        {% endwith %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        <div class="legenda">
+            <p class="wykkol">Wykład</p>
+            <p class="cwkol">Ćwiczenie</p>
+            <p class="labkol">Laboratorium</p>
+            <p class="semkol">Seminarium</p>
+            <p class="fakkol">Fakultet</p>
+            <p class="inkol">Inne</p>
+        </div>
+        </div>
+    </div>
+{% endblock %}

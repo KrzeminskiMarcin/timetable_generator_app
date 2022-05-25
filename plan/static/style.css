@@ -1,0 +1,442 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #b3b7a4 !important;
+    overflow-y: hidden;
+}
+.user_card {
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #343f3e;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+}
+
+.form_container {
+    margin-top: 20px;
+}
+
+#form-title{
+    color: #fff;
+}
+.login_btn {
+    width: 100%;
+    background: #ef6351 !important;
+    color: black !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #db2955 !important;
+    color: black !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.text_on_dark{
+    display: inline-block;
+    justify-content: space-between;
+    color: white;
+}
+.text_on_dark2{
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 30px;
+    padding-top: 25px;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS";
+}
+.text_on_dark3{
+    color: white;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 80%;
+    padding-top: 25px;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS";
+}
+.error{
+    margin-top: 20px;
+    color:indianred;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+.messages-info{
+    margin-top: 20px;
+    color: orange;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+.messages-success{
+    margin-top: 20px;
+    color: palegreen;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+.navbar{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #343f3e;
+    width: 1402px;
+    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border: solid 2px white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.new{
+    margin-left: 100px;
+    color: black;
+    font-size: x-large;
+    text-transform: uppercase;
+    border: solid black 2px;
+    border-radius: 20px;
+    background: greenyellow;
+    width: 50px;
+}
+.a:hover{
+    text-decoration: none;
+    color: grey;
+}
+.edit{
+    position: relative;
+    float: right;
+    margin-right: 13%;
+    margin-top: -12%;
+    color: darkblue;
+    font-size: 20px;
+}
+.usun{
+    position: relative;
+    float: right;
+    margin-right: 3%;
+    margin-top: -12.75%;
+    color: darkred;
+    font-size: 27px;
+}
+.board{
+    text-align: center;
+    padding-top: 1%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background: #343f3e;
+    width: 1402px;
+    height: 670px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border: solid 2px white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.karta{
+    background: repeating-linear-gradient(#ffff88, #ffff88 20px, #0000 20px, #0000 21px);
+    display: inline-block;
+    margin-left: 2%;
+    margin-top: 5%;
+    padding-top: 2.75%;
+    padding-bottom: 3%;
+    border-radius: 20px;
+    border: solid 2px white;
+    width: 20%;
+    font-weight: bold;
+    font-size: large;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS";
+}
+.formularz{
+    width: 500px;
+    height: 300px;
+    margin-top: 230px;
+    margin-left: 490px;
+    align-items: center;
+    border: whitesmoke solid 3px;
+    border-radius: 12px;
+}
+.formularz-delete{
+    width: 600px;
+    margin-left: 450px;
+    margin-top: 230px;
+    height: 200px;
+    align-items: center;
+    border: whitesmoke solid 3px;
+    border-radius: 12px;
+}
+.title-on-dark{
+    color: whitesmoke;
+    padding-bottom: 3%;
+}
+.formularz-label{
+    color: whitesmoke;
+}
+.submit{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.cancel{
+    position: absolute;
+    bottom: 5px;
+    right: 85px;
+
+}
+.powrot{
+    position: absolute;
+    margin-left: -1900px;
+    margin-top: -25px;
+    width: 50px;
+}
+.powrot:hover{
+    text-decoration: none;
+}
+.rodzaj0{
+    background: #2aabd2;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.rodzaj1{
+    background: indianred;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.rodzaj2{
+    background: greenyellow;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.rodzaj3{
+    background: orange;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.rodzaj4{
+    background: mediumpurple;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.rodzaj5{
+    background: yellow;
+    width: 171px;
+    position: absolute;
+    z-index: 100;
+    left: 2px;
+    border: solid black 1px;
+}
+.plan{
+    width: 1400px;
+    height: 603px;
+    background: whitesmoke;
+}
+div#dni>div{
+    display: inline-block;
+    width: 175px;
+    height: 30px;
+    margin-left:-6px;
+    text-align: center;
+    border: solid grey;
+}
+div#godziny{
+    width: 175px;
+    height: 550px;
+    padding-top: 7px;
+    text-align: center;
+    margin-left: 4px;
+    margin-top: -3px;
+    border: solid grey;
+    display: block;
+    float: left;
+}
+.godzina{
+    height: 46px;
+    width: 175px;
+    margin-left: -3px;
+    margin-top: -4px;
+    padding-top: 10px;
+    border: solid grey;
+    display: block;
+}
+.day{
+    width: 175px;
+    height: 550px;
+    margin-left: -2px;
+    position: relative;
+    float: left;
+    display: inline-block;
+}
+.godzina:first-child{
+    margin-top: -10px;
+}
+.sep{
+    width: 175px;
+    height: 46px;
+    border: solid grey;
+    margin-top: -4px;
+}
+.sep:first-child{
+    margin-top: -3px;
+}
+.dane{
+    display: block;
+    z-index: 200;
+    color: black;
+    padding-top: 15px;
+    font-size: 12px;
+}
+.dane>p{
+    text-align: center;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+.usunlekcja{
+    font-size: 15px;
+    color: black;
+    position: absolute;
+    right: 5px;
+    top: 1px;
+}
+.editlekcja{
+    color: black;
+    position: absolute;
+    right: 20px;
+    top: 2px;
+}
+.legenda{
+    width: 1400px;
+    height: 30px;
+    z-index: 300;
+    background: whitesmoke;
+    text-align: center;
+}
+.legenda>p{
+    display: inline-block;
+    float: left;
+    margin-left: 10px;
+    color: black;
+    font-weight: bold;
+}
+.wykkol{
+    width: 120px;
+    height: 20px;
+    background: #2aabd2;
+    margin-top: 2px;
+    border: solid black 1px;
+}
+.cwkol{
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    background: greenyellow;
+    border: solid black 1px;
+}
+.labkol{
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    background: indianred;
+    border: solid black 1px;
+}
+.semkol{
+    width: 120px;
+    height: 20px;
+    background: orange;
+    margin-top: 2px;
+    border: solid black 1px;
+}
+.fakkol{
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    background: mediumpurple;
+    border: solid black 1px;
+}
+.inkol{
+    width: 120px;
+    height: 20px;
+    margin-top: 2px;
+    background: yellow;
+    border: solid black 1px;
+}
+.entry>p{
+    display: inline-block;
+    margin-right: 10px;
+}
+.error1{
+    position: absolute;
+    bottom: -7px;
+    color:indianred;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+}
+.plansam{
+    padding-left: 70px;
+    padding-top: 100px;
+    background: whitesmoke !important;
+}
+.clear{
+    position: absolute;
+    color: whitesmoke;
+    margin-top: 3px;
+    margin-left: 450px;
+    font-size: 25px;
+}
+.clear:hover{
+    text-decoration: none;
+}
+.logout{
+    display: inline-block;
+    width: 30px;
+    text-decoration: none;
+    float: right;
+    margin-right: 20px;
+}
+.logout>a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 25px;
+}
+.logout>a:hover{
+    text-decoration: none;
+}
+.nawigacja{
+    margin-top: 20px;
+}

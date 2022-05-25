@@ -1,0 +1,8 @@
+{% block content %}
+    <div class="nawigacja">
+    <span class="text_on_dark2">Hello, {{ request.user }}!</span>
+    <div class="logout">
+        <a href="{% url 'logout' %}" title="Logout"><i class="fas fa-times"></i></a>
+    </div>
+    </div>
+{% endblock %}

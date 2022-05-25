@@ -1,0 +1,19 @@
+{% extends "plan/main.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <div class="board">
+    <div class="container">
+        <span class="text_on_dark2">Your timetables:</span>
+        <a class="new a fas fa-plus" title="Create new timetable" href="{% url 'create_timetable' %}"></a>
+    </div>
+        <div class="plany">
+            {% for i in plany %}
+                <div class="karta">
+                    <a class="a" href="{% url 'timetable_view' i.id %}">{{ i.name }}</a>
+                    <a class="fas a fa-pen edit" title="Update timetable" href="{% url 'update_timetable' i.id %}"></a>
+                    <a class="fas a fa-times usun" title="Delete timetable" href="{% url 'delete_timetable' i.id %}"></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

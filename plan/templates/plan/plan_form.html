@@ -1,0 +1,27 @@
+{% load static %}
+<head>
+    <title>Create new Timetable</title>
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static '/style.css' %}?{% now "U" %}">
+    <meta charset="UTF-8">
+</head>
+
+{% block content %}
+<div class="user_card formularz">
+    <h1 class="title-on-dark">{{ name }} Timetable</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.user }}
+        <div>
+            <span class="formularz-label">
+                {{ form.name.label }}:
+            </span>
+            <span class="input-text">
+                {{ form.name }}
+            </span>
+        </div>
+        <a class="btn btn-info cancel" href="{% url 'home' %}">Cancel</a>
+        <input type="submit" name="Submit" class="btn btn-success submit" value="Confirm">
+    </form>
+</div>
+{% endblock %}
